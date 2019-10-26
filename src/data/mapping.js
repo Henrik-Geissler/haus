@@ -14,7 +14,7 @@ const dataMap = {
     'Liberal Party of Canada/Parti libéral du Canada': 'red',
     'Conservative Party of Canada/Parti conservateur du Canada': 'blue',
     'New Democratic Party/Nouveau Parti démocratique': 'orange',
-    'Bloc Québécois/Bloc Québécois': 'purple',
+    'Bloc Québécois/Bloc Québécois': 'lightblue',
     'Green Party of Canada/Le Parti Vert du Canada': 'green',
     // Regions
     'Newfoundland and Labrador/Terre-Neuve-et-Labrador': randomColor(),
