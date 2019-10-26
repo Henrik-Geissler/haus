@@ -32,12 +32,12 @@ const dataMap = {
     Nunavut: randomColor(),
   },
   partyByRegion: {
-    desc: 'Percentage of valid votes by political affiliation',
+    desc: 'Percentage of valid votes by political affiliation per region',
     path: partyByRegion,
     groupBy: 'Political affiliation/Appartenance politique',
   },
   regionByMethod: {
-    desc: 'Distribution of valid votes by voting method',
+    desc: 'Distribution of valid votes by region per voting method',
     path: regionByMethod,
     groupBy: 'Province',
   },
