@@ -3,6 +3,10 @@ import { createGlobalStyle } from 'styled-components';
 export const globalPadding = 30;
 
 const GlobalStyles = createGlobalStyle`
+  *, *:after, *:before {
+    box-sizing: border-box;
+  }
+
   html, body {
     margin: 0;
     padding: 0;
