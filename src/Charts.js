@@ -2,54 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Chart from 'chart.js';
 
-const randomScalingFactor = () => {
-  return Math.random().toFixed(2);
-};
-
-const data = {
-  labels: ['ON', 'BC', 'QB', 'AB', 'NL', 'SK', 'MB'],
-  datasets: [
-    {
-      label: 'Set 1',
-      backgroundColor: 'red',
-      data: [
-        1,
-        2,
-        3,
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-      ],
-    },
-    {
-      label: 'Set 2',
-      backgroundColor: 'orange',
-      data: [
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-      ],
-    },
-    {
-      label: 'Set 3',
-      backgroundColor: 'green',
-      data: [
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-      ],
-    },
-  ],
-};
+import { fetchJsonData } from './utils';
 
 const Charts = () => {
   const canvas = useRef(null);
@@ -57,7 +10,7 @@ const Charts = () => {
   useEffect(() => {
     const chart = new Chart(canvas.current, {
       type: 'bar',
-      data,
+      data: null,
       options: {
         scales: {
           xAxes: [
@@ -74,7 +27,10 @@ const Charts = () => {
       },
     });
 
-    console.log({ chart });
+    fetchJsonData('partyByRegion').then(data => {
+      chart.data = data;
+      chart.update();
+    });
 
     return () => {
       chart.destroy();
@@ -83,7 +39,10 @@ const Charts = () => {
 
   return (
     <Wrapper>
-      <Canvas ref={canvas} aria-label='Chart' role='img' />
+      <ChartConatiner>
+        <ChartTitle>Party by Region</ChartTitle>
+        <Canvas ref={canvas} aria-label='Chart' role='img' />
+      </ChartConatiner>
     </Wrapper>
   );
 };
@@ -92,7 +51,18 @@ const Wrapper = styled.div`
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+`;
+
+const ChartConatiner = styled.div`
+  margin: 0 auto;
+  padding: 0;
+  width: 60%;
+`;
+
+const ChartTitle = styled.h3`
+  margin: 0 0 30px 0;
+  padding: 0;
+  text-align: center;
 `;
 
 const Canvas = styled.canvas`
