@@ -5,7 +5,7 @@ import Chart from 'chart.js';
 import { fetchJsonData } from './utils';
 import data from './data/mapping';
 
-const ChartComponent = ({ dataSet, type }) => {
+const ChartComponent = ({ dataSet, type, options }) => {
   const chartTitle = data[dataSet].desc;
   const canvas = useRef(null);
 
@@ -13,20 +13,7 @@ const ChartComponent = ({ dataSet, type }) => {
     const chart = new Chart(canvas.current, {
       type,
       data: null,
-      options: {
-        scales: {
-          xAxes: [
-            {
-              stacked: true,
-            },
-          ],
-          yAxes: [
-            {
-              stacked: true,
-            },
-          ],
-        },
-      },
+      options,
     });
 
     fetchJsonData(dataSet).then(chartData => {
@@ -37,7 +24,7 @@ const ChartComponent = ({ dataSet, type }) => {
     return () => {
       chart.destroy();
     };
-  }, [dataSet, type]);
+  }, [dataSet, type, options]);
 
   return (
     <Wrapper>
@@ -50,7 +37,7 @@ const ChartComponent = ({ dataSet, type }) => {
 const Wrapper = styled.div`
   margin: 0 auto 50px auto;
   padding: 0 0 50px 0;
-  width: 60%;
+  width: 70%;
   border-bottom: 1px solid #000000;
 
   &:last-child {
