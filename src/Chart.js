@@ -16,7 +16,7 @@ const ChartComponent = ({ dataSet, type, options }) => {
       options,
     });
 
-    fetchJsonData(dataSet).then(chartData => {
+    fetchJsonData(dataSet, type).then(chartData => {
       chart.data = chartData;
       chart.update();
     });
@@ -29,7 +29,7 @@ const ChartComponent = ({ dataSet, type, options }) => {
   return (
     <Wrapper>
       <ChartTitle>{chartTitle}</ChartTitle>
-      <Canvas ref={canvas} aria-label='Chart' role='img' />
+      <Canvas ref={canvas} aria-label={chartTitle} role='img' />
     </Wrapper>
   );
 };

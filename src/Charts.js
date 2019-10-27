@@ -18,24 +18,14 @@ const barChartOptions = {
   },
 };
 
-const radarChartOptions = {};
-
 const Charts = () => {
   return (
     <>
+      <Chart type='radar' dataSet={dataSets.partyByRegion} />
+      <Chart type='doughnut' dataSet={dataSets.votesByMethod} />
       <Chart
-        dataSet={dataSets.partyByRegion}
-        type='radar'
-        options={radarChartOptions}
-      />
-      <Chart
-        dataSet={dataSets.regionByMethod}
         type='bar'
-        options={barChartOptions}
-      />
-      <Chart
         dataSet={dataSets.sexByRegion}
-        type='bar'
         options={barChartOptions}
       />
     </>

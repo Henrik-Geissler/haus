@@ -1,12 +1,12 @@
 import randomColor from 'randomcolor';
 
 import partyByRegion from './region_party_percent.csv';
-import regionByMethod from './method_region_votes.csv';
+import votesByMethod from './method_votes.csv';
 import sexByRegion from './sex_region_seats.csv';
 
 export const dataSets = {
   partyByRegion: 'partyByRegion',
-  regionByMethod: 'regionByMethod',
+  votesByMethod: 'votesByMethod',
   sexByRegion: 'sexByRegion',
 };
 
@@ -19,33 +19,24 @@ const dataMap = {
     'New Democratic Party/Nouveau Parti démocratique': 'rgba(255, 165, 0, 0.5)',
     'Bloc Québécois/Bloc Québécois': 'rgba(173, 216, 230, 0.5)',
     'Green Party of Canada/Le Parti Vert du Canada': 'rgba(0, 255, 0, 0.5)',
-    // Regions
-    'Newfoundland and Labrador/Terre-Neuve-et-Labrador': randomColor(),
-    'Prince Edward Island/Île-du-Prince-Édouard': randomColor(),
-    'Nova Scotia/Nouvelle-Écosse': randomColor(),
-    'New Brunswick/Nouveau-Brunswick': randomColor(),
-    'Quebec/Québec': randomColor(),
-    Ontario: randomColor(),
-    Manitoba: randomColor(),
-    Saskatchewan: randomColor(),
-    Alberta: randomColor(),
-    'British Columbia/Colombie-Britannique': randomColor(),
-    Yukon: randomColor(),
-    'Northwest Territories/Territoires du Nord-Ouest': randomColor(),
-    Nunavut: randomColor(),
+    // Methods
+    'Valid Votes_Stationary Polls/Votes valides_Bureaux fixes': randomColor(),
+    'Valid Votes_Mobile Polls/Votes valides_Bureaux itinérants': randomColor(),
+    'Valid Votes_Advance Polls/Votes valides_Bureaux par anticipation': randomColor(),
+    'Valid Votes_SVR/Votes valides_RES': randomColor(),
     // Sexes
-    'Man/Homme': 'blue',
-    'Woman/Femme': 'red',
+    'Man/Homme': randomColor(),
+    'Woman/Femme': randomColor(),
   },
   partyByRegion: {
     desc: 'Percentage of valid votes by political affiliation per region',
     path: partyByRegion,
     groupBy: 'Political affiliation/Appartenance politique',
   },
-  regionByMethod: {
-    desc: 'Distribution of valid votes by region per voting method',
-    path: regionByMethod,
-    groupBy: 'Province',
+  votesByMethod: {
+    desc: 'Distribution of valid votes per voting method',
+    path: votesByMethod,
+    groupBy: 'Total',
   },
   sexByRegion: {
     desc: 'Distribution of seats by sex per region',
