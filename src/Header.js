@@ -17,6 +17,7 @@ const Header = () => {
           42nd General Election: Official Voting Results (open.canada.ca)
         </a>
       </Source>
+      <Tip>Tip: Click legends to toggle inclusion in chart.</Tip>
     </Wrapper>
   );
 };
@@ -29,13 +30,13 @@ const Wrapper = styled.header`
 `;
 
 const Title = styled.h1`
-  margin: 0 0 20px 0;
+  margin: 0;
   padding: 0;
   font-size: 4vw;
 `;
 
 const Source = styled.h2`
-  margin: 0;
+  margin: 0 0 30px 0;
   padding: 0;
   font-size: 1.5vw;
   font-style: italic;
@@ -46,6 +47,11 @@ const Source = styled.h2`
     text-decoration: underline;
     cursor: pointer;
   }
+`;
+
+const Tip = styled.p`
+  margin: 0;
+  padding: 0;
 `;
 
 export default Header;
