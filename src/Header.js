@@ -6,7 +6,7 @@ import { globalPadding } from './GlobalStyles';
 const Header = () => {
   return (
     <Wrapper>
-      <Title>Vote Viz</Title>
+      <Title>ChartJS Starter</Title>
       <Source>
         Source:{' '}
         <a
