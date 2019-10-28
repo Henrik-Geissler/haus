@@ -4,7 +4,7 @@ import dataMap from './data/mapping';
 
 const formatData = (results, dataType, chartType) => {
   const isDoughnutChart = chartType === 'doughnut';
-  const { groupBy } = dataMap[dataType];
+  const { groupBy, colors } = dataMap[dataType];
   const formattedData = {
     labels: [],
     datasets: [],
@@ -12,16 +12,14 @@ const formatData = (results, dataType, chartType) => {
 
   results.forEach((entry, index) => {
     const group = entry[groupBy];
+    let color = colors[group];
 
     if (index === 0) {
       formattedData.labels = Object.keys(entry).filter(key => key !== groupBy);
     }
 
-    let color = dataMap.colors[group];
     if (isDoughnutChart && index === 0) {
-      color = formattedData.labels.map(
-        doughnutLabel => dataMap.colors[doughnutLabel],
-      );
+      color = formattedData.labels.map(doughnutLabel => colors[doughnutLabel]);
     }
 
     const formattedEntry = {
