@@ -5,17 +5,15 @@ import GlobalStyles, { globalPadding } from './GlobalStyles';
 import Header from './Header';
 import Charts from './Charts';
 
-const App = () => {
-  return (
-    <>
-      <GlobalStyles />
-      <Header />
-      <Content>
-        <Charts />
-      </Content>
-    </>
-  );
-};
+const App = () => (
+  <>
+    <GlobalStyles />
+    <Header />
+    <Content>
+      <Charts />
+    </Content>
+  </>
+);
 
 const Content = styled.div`
   margin: 0;
