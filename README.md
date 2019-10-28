@@ -1,12 +1,12 @@
-## Vote Viz
+## ChartJS Starter
 
-`vote-viz`
+`chartjs-starter`
 
 ---
 
 ### About
 
-A data visualization of the 42nd Canadian General Election official voting results.
+Visualization of the 42nd Canadian General Election official voting results data.
 
 Data source: [open.canada.ca](https://open.canada.ca/data/en/dataset/775f3136-1aa3-4854-a51e-1a2dab362525)
 
