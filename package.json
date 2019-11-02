@@ -1,7 +1,12 @@
 {
   "name": "chartjs-starter",
   "version": "1.0.0",
-  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Amir Honarpour",
+    "email": "amir@honarpour.com",
+    "url": "https://honarpour.com/code"
+  },
   "dependencies": {
     "chart.js": "^2.9.0",
     "csvtojson": "^2.0.10",
