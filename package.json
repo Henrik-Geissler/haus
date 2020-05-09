@@ -1,20 +1,20 @@
 {
-  "name": "chartjs-starter",
+  "name": "react-chartjs-starter",
   "version": "1.0.0",
   "license": "MIT",
   "author": {
     "name": "Amir Honarpour",
     "email": "amir@honarpour.com",
-    "url": "https://honarpour.com/code"
+    "url": "https://honarpour.com"
   },
   "dependencies": {
-    "chart.js": "^2.9.0",
+    "chart.js": "^2.9.3",
     "csvtojson": "^2.0.10",
     "randomcolor": "^0.5.4",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0",
-    "styled-components": "^4.4.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "styled-components": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
