@@ -1,20 +1,19 @@
 {
-  "name": "react-chartjs-starter",
-  "version": "1.0.0",
-  "license": "MIT",
-  "author": {
-    "name": "Amir Honarpour",
-    "email": "amir@honarpour.com",
-    "url": "https://honarpour.com"
-  },
+  "name": "hi",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "chart.js": "^2.9.3",
-    "csvtojson": "^2.0.10",
-    "randomcolor": "^0.5.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1",
-    "styled-components": "^5.1.0"
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.1",
+    "@mui/x-charts": "^7.18.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,7 +22,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
