@@ -49,15 +49,15 @@ const sample = [1, 10, 30, 50, 70, 90, 100];
     yAxis={[ 
       {   scaleType: 'linear' },
     ]}
-      width={50}
-      height={100} 
+      width={300}
+      height={200} 
     />      
     <LineChart {...outputs}
     yAxis={[ 
       {   scaleType: 'log',min:1},
     ]}
-    width={50}
-    height={100} 
+    width={0}
+    height={0} 
   /> </div>
         <div style={{display:'flex',flexWrap:'wrap',flexDirection:'row',gap:'10px'}}>
         {fields.map(([k,v])=><Inp v={v} k={k} key={k}></Inp> )}</div>
